@@ -1,0 +1,84 @@
+@import "./variables.scss";
+
+.progressContainer{
+    background-image: url("/bg-sidebar-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+
+    padding: 30px;
+    border-radius: 10px;
+    height: 100%;
+    width: 30%;
+
+    .step{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 15px;
+
+        .number{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            color: $light-blue;
+            border: 1px solid $light-blue;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 15px;
+
+            &.active{
+                background-color: $light-blue;
+                color: $blue;
+            }
+        }
+
+        .text{
+            color: $light-grey;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 2px;
+        }
+        .title{
+            color: $white;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding: 2px;
+            font-weight: 500;
+        }
+    }
+}
+
+
+@media(max-width: 768px){
+    .progressContainer{
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+@media(max-width: 570px){
+    .progressContainer{
+        justify-content: center;
+        background-image: url("/bg-sidebar-mobile.svg");
+
+        .step{
+            width: auto;
+            gap: 0;
+
+            .text, .title{
+                display: none;
+            }
+        }
+    }
+}
