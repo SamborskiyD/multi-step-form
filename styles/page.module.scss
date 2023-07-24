@@ -26,27 +26,85 @@
   width: 70%;
   display: flex;
   flex-direction: column;
-}
 
-.submitButton{
-  background-color: $blue;
-  color: $white;
-  font-size: 16px;
-  padding: 15px;
-  border: none;
-  border-radius: 5px;
-  max-width: 120px;
-  width: 100%;
-  transition: all ease .2s;
+  .title {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
 
-  &:hover{
-    background-color: $purplish-blue;
+  .description {
+    font-size: 16px;
+    color: $grey;
+    margin-bottom: 10px;
   }
 }
+
+.formButtons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 0 0;
+
+  .submitButton {
+    background-color: $blue;
+    color: $white;
+    font-size: 16px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    max-width: 120px;
+    width: 100%;
+    transition: all ease .2s;
+
+    &:hover {
+      background-color: $purplish-blue;
+    }
+
+    &.confirm {
+      background-color: $purplish-blue;
+
+      &:hover {
+        background-color: $pastel-blue;
+      }
+    }
+  }
+
+  .backButton{
+    background-color: $white;
+    color: $grey;
+    font-size: 16px;
+    padding: 15px;
+    font-weight: 700;
+    border: none;
+    max-width: 100px;
+    width: 100%;
+    transition: all ease .2s;
+
+    &:hover{
+      color: $blue;
+    }
+  }
+}
+
 
 @media(max-width: 768px) {
   .appContainer {
     flex-direction: column;
     width: 100%;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
+
+  .formButtons {
+    margin-top: 80px;
+  }
+}
+
+@media(max-width: 570px) {
+  .formContainer {
+    padding: 20px;
   }
 }
