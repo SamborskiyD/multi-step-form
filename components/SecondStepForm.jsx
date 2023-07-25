@@ -37,8 +37,12 @@ const SecondStepForm = () => {
                 </div>
 
                 <div className={styles.switchContainer}>
-                    <span>Monthly</span>
-                    <span>Yearly</span>
+                    <span className={styles.state}>Monthly</span>
+                    <div className={styles.switch}>
+                        <input type="checkbox" name="checkbox" id="checkbox" className={styles.checkbox} />
+                        <span className={styles.slider}></span>
+                    </div>
+                    <span className={styles.state}>Yearly</span>
                 </div>
             </form>
 
