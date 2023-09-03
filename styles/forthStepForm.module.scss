@@ -1,0 +1,65 @@
+@import "./variables.scss";
+
+.summary {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    background-color: $blue-grey;
+    padding: 30px;
+    border-radius: 10px;
+
+    .price,
+    .description {
+        font-size: 14px;
+    }
+    .description {
+        color: $grey;
+    }
+
+    .plan, .addOn, .total{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .plan{
+        padding-bottom: 20px;
+        border-bottom: 1px solid $light-grey;
+        .title{
+            font-size: 16px;
+            margin-bottom: 0;
+        }
+        .link{
+            font-size: 14px;
+            color: $grey;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            cursor: pointer;
+        }
+        .price{
+            font-weight: 700;
+        }
+    }
+
+    .addOn{
+        margin-top: 20px;
+    }
+}
+
+.total {
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    .description{
+        font-size: 14px;
+        color: $grey;
+    }
+    .price{
+        color: $purplish-blue;
+        font-size: 20px;
+        font-weight: 700;
+    }
+}

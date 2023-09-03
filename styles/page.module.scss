@@ -55,6 +55,7 @@
     max-width: 120px;
     width: 100%;
     transition: all ease .2s;
+    cursor: pointer;
 
     &:hover {
       background-color: $purplish-blue;
@@ -79,6 +80,8 @@
     max-width: 100px;
     width: 100%;
     transition: all ease .2s;
+    cursor: pointer;
+
 
     &:hover{
       color: $blue;

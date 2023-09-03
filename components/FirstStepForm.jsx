@@ -1,6 +1,6 @@
 import styles from "@/styles/firstStepForm.module.scss"
 import formTemplate from "@/styles/page.module.scss"
-
+ 
 const FirstStepForm = () => {
     return (
         <div className={formTemplate.formContainer}>

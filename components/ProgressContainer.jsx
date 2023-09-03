@@ -18,7 +18,7 @@ const ProgressContainer = () => {
           <p className={styles.text}>step 2</p>
           <h3 className={styles.title}>select plan</h3>
         </div>
-      </div>
+      </div> 
 
       <div className={styles.step}>
         <span className={styles.number}>3</span>
