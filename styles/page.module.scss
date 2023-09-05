@@ -28,11 +28,13 @@
   flex-direction: column;
 
   .title {
+    line-height: 1.25em;
     font-size: 32px;
     margin-bottom: 10px;
   }
 
   .description {
+    line-height: 1.3em;
     font-size: 16px;
     color: $grey;
   }
@@ -98,6 +100,10 @@
 
   .formContainer {
     width: 100%;
+
+    .title{
+      font-size: 26px;
+    }
   }
 }
 

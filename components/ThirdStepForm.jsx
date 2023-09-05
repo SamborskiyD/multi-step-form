@@ -1,7 +1,12 @@
 import styles from "@/styles/thirdStepForm.module.scss"
 import formTemplate from "@/styles/page.module.scss"
+import { useDispatch } from "react-redux"
+import { nextStep, prevStep } from "@/redux/stepSlice"
 
 const ThirdStepForm = () => {
+
+    const dispatch = useDispatch()
+
     return (
         <div className={formTemplate.formContainer}>
             <h1 className={formTemplate.title}>Pick add-ons</h1>
@@ -41,8 +46,19 @@ const ThirdStepForm = () => {
             </form>
 
             <div className={formTemplate.formButtons}>
-                <button form="thirdStepForm" type="submit" className={formTemplate.backButton}>Go Back</button>
-                <button form="thirdStepForm" type="submit" className={formTemplate.submitButton}>Next Page</button>
+                <button
+                    className={formTemplate.backButton}
+                    onClick={() => dispatch(prevStep())}
+                >
+                    Go Back
+                </button>
+                <button
+                    form="firstStepForm" type="submit"
+                    className={formTemplate.submitButton}
+                    onClick={() => dispatch(nextStep())}
+                >
+                    Next Page
+                </button>
             </div>
         </div>
     )

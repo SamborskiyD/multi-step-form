@@ -1,37 +1,52 @@
 import styles from "@/styles/secondStepForm.module.scss"
 import formTemplate from "@/styles/page.module.scss"
 import Image from "next/image"
+import { useDispatch, useSelector } from "react-redux"
+import { nextStep, prevStep } from "@/redux/stepSlice"
+import { setPlanType, setPlan } from "@/redux/dataSlice"
+
 
 const SecondStepForm = () => {
-  return (
-    <div className={formTemplate.formContainer}>
+
+    const planData = useSelector((state) => state.data)
+
+    const dispatch = useDispatch()
+
+    return (
+        <div className={formTemplate.formContainer}>
             <h1 className={formTemplate.title}>Select your plan</h1>
             <p className={formTemplate.description}>You have the option of monthly or yearly billing.</p>
-            
+
             <form action="" className={styles.form}>
                 <div className={styles.cardsContainer}>
                     <div className={styles.card}>
-                        <Image src={"/icon-arcade.svg"}  width={40} height={40}/>
+                        <Image src={"/icon-arcade.svg"} width={40} height={40} />
                         <div className={styles.content}>
                             <h3 className={styles.title}>Arcade</h3>
-                            <p className={styles.price}>$9/mo</p>
-                            <p className={styles.description}> 2 months free</p>
+                            <p className={styles.price}>{planData.planType === 'Yearly' ? '$90/yr' : '$9/mo'}</p>
+                            {
+                                planData.planType === 'Yearly' ? <p className={styles.description}> 2 months free</p> : <></>
+                            }
                         </div>
                     </div>
                     <div className={styles.card}>
-                        <Image src={"/icon-advanced.svg"}  width={40} height={40}/>
+                        <Image src={"/icon-advanced.svg"} width={40} height={40} />
                         <div className={styles.content}>
                             <h3 className={styles.title}>Advanced</h3>
-                            <p className={styles.price}>$12/mo</p>
-                            <p className={styles.description}> 2 months free</p>
+                            <p className={styles.price}>{planData.planType === 'Yearly' ? '$120/yr' : '$12/mo'}</p>
+                            {
+                                planData.planType === 'Yearly' ? <p className={styles.description}> 2 months free</p> : <></>
+                            }
                         </div>
                     </div>
                     <div className={styles.card}>
-                        <Image src={"/icon-pro.svg"}  width={40} height={40}/>
+                        <Image src={"/icon-pro.svg"} width={40} height={40} />
                         <div className={styles.content}>
                             <h3 className={styles.title}>Pro</h3>
-                            <p className={styles.price}>$15/mo</p>
-                            <p className={styles.description}> 2 months free</p>
+                            <p className={styles.price}>{planData.planType === 'Yearly' ? '$150/yr' : '$15/mo'}</p>
+                            {
+                                planData.planType === 'Yearly' ? <p className={styles.description}> 2 months free</p> : <></>
+                            }
                         </div>
                     </div>
                 </div>
@@ -39,7 +54,13 @@ const SecondStepForm = () => {
                 <div className={styles.switchContainer}>
                     <span className={styles.state}>Monthly</span>
                     <div className={styles.switch}>
-                        <input type="checkbox" name="checkbox" id="checkbox" className={styles.checkbox} />
+                        <input 
+                            type="checkbox" 
+                            name="checkbox" 
+                            id="checkbox" 
+                            className={styles.checkbox} 
+                            onClick={(event)=> dispatch(setPlanType(event.target.checked))} 
+                        />
                         <span className={styles.slider}></span>
                     </div>
                     <span className={styles.state}>Yearly</span>
@@ -47,11 +68,22 @@ const SecondStepForm = () => {
             </form>
 
             <div className={formTemplate.formButtons}>
-                <button form="firstStepForm" type="submit" className={formTemplate.backButton}>Go Back</button>
-                <button form="firstStepForm" type="submit" className={formTemplate.submitButton}>Next Page</button>
+                <button
+                    className={formTemplate.backButton}
+                    onClick={() => dispatch(prevStep())}
+                >
+                    Go Back
+                </button>
+                <button
+                    form="firstStepForm" type="submit"
+                    className={formTemplate.submitButton}
+                    onClick={() => dispatch(nextStep())}
+                >
+                    Next Page
+                </button>
             </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default SecondStepForm

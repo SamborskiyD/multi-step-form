@@ -1,7 +1,12 @@
+
 import styles from "@/styles/firstStepForm.module.scss"
 import formTemplate from "@/styles/page.module.scss"
- 
+import { useDispatch } from "react-redux"
+import { nextStep } from "@/redux/stepSlice"
+
 const FirstStepForm = () => {
+    const dispatch = useDispatch()
+
     return (
         <div className={formTemplate.formContainer}>
             <h1 className={formTemplate.title}>Personal info</h1>
@@ -24,7 +29,13 @@ const FirstStepForm = () => {
 
             <div className={formTemplate.formButtons}>
                 <span></span>
-                <button form="firstStepForm" type="submit" className={formTemplate.submitButton}>Next Page</button>
+                <button
+                    form="firstStepForm" type="submit"
+                    className={formTemplate.submitButton}
+                    onClick={() => dispatch(nextStep())}
+                >
+                    Next Page
+                </button>
             </div>
         </div>
     )

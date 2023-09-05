@@ -1,18 +1,16 @@
+"use client"
 
 import styles from "@/styles/page.module.scss"
-import ProgressContainer from "@/components/ProgressContainer"
-import FirstStepForm from "@/components/FirstStepForm"
-import SecondStepForm from "@/components/SecondStepForm"
-import ThirdStepForm from "@/components/ThirdStepForm"
-import ForthStepForm from "@/components/ForthStepForm"
+import App from "@/components/App"
+import { Provider } from "react-redux"
+import store from "@/redux/store"
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <section className={styles.appContainer}>
-        <ProgressContainer />
-        <ForthStepForm />
-      </section>
-    </main>
+    <Provider store={store}>
+      <main className={styles.main}>
+        <App />
+      </main>
+    </Provider>
   )
 }
