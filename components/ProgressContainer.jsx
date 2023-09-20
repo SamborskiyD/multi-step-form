@@ -1,5 +1,5 @@
 import styles from "@/styles/progressContainer.module.scss"
-import { useSelector } from "react-redux/es/hooks/useSelector"
+import { useSelector } from "react-redux"
 
 const ProgressContainer = () => {
 

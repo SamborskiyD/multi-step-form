@@ -12,15 +12,16 @@ const SecondStepForm = () => {
 
     const dispatch = useDispatch()
 
+
     return (
         <div className={formTemplate.formContainer}>
             <h1 className={formTemplate.title}>Select your plan</h1>
             <p className={formTemplate.description}>You have the option of monthly or yearly billing.</p>
 
-            <form action="" className={styles.form}>
+            <form onSubmit className={styles.form}>
                 <div className={styles.cardsContainer}>
                     <div className={styles.card}>
-                        <Image src={"/icon-arcade.svg"} width={40} height={40} />
+                        <Image src={"/icon-arcade.svg"} width={40} height={40} alt="arcade icon"/>
                         <div className={styles.content}>
                             <h3 className={styles.title}>Arcade</h3>
                             <p className={styles.price}>{planData.planType === 'Yearly' ? '$90/yr' : '$9/mo'}</p>
@@ -30,7 +31,7 @@ const SecondStepForm = () => {
                         </div>
                     </div>
                     <div className={styles.card}>
-                        <Image src={"/icon-advanced.svg"} width={40} height={40} />
+                        <Image src={"/icon-advanced.svg"} width={40} height={40} alt="advanced icon"/>
                         <div className={styles.content}>
                             <h3 className={styles.title}>Advanced</h3>
                             <p className={styles.price}>{planData.planType === 'Yearly' ? '$120/yr' : '$12/mo'}</p>
@@ -40,7 +41,7 @@ const SecondStepForm = () => {
                         </div>
                     </div>
                     <div className={styles.card}>
-                        <Image src={"/icon-pro.svg"} width={40} height={40} />
+                        <Image src={"/icon-pro.svg"} width={40} height={40} alt="pro icon"/>
                         <div className={styles.content}>
                             <h3 className={styles.title}>Pro</h3>
                             <p className={styles.price}>{planData.planType === 'Yearly' ? '$150/yr' : '$15/mo'}</p>
@@ -57,7 +58,7 @@ const SecondStepForm = () => {
                         <input 
                             type="checkbox" 
                             name="checkbox" 
-                            id="checkbox" 
+                            id="checkbox"
                             className={styles.checkbox} 
                             onClick={(event)=> dispatch(setPlanType(event.target.checked))} 
                         />

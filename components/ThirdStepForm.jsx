@@ -13,7 +13,7 @@ const ThirdStepForm = () => {
             <p className={formTemplate.description}>Add-ons help enhance your gaming experience.</p>
 
             <form action="" className={styles.form} id="thirdStepForm">
-                <label for="checkbox-1" className={styles.checkboxContainer}>
+                <label htmlFor="checkbox-1" className={styles.checkboxContainer}>
                     <input type="checkbox" name="" id="checkbox-1" className={styles.checkbox} />
                     <div className={styles.content}>
                         <div>
@@ -23,7 +23,7 @@ const ThirdStepForm = () => {
                         <span className={styles.price}>+$1/mo</span>
                     </div>
                 </label>
-                <label for="checkbox-2" className={styles.checkboxContainer}>
+                <label htmlFor="checkbox-2" className={styles.checkboxContainer}>
                     <input type="checkbox" name="" id="checkbox-2" className={styles.checkbox} />
                     <div className={styles.content}>
                         <div>
@@ -33,7 +33,7 @@ const ThirdStepForm = () => {
                         <span className={styles.price}>+$2/mo</span>
                     </div>
                 </label>
-                <label for="checkbox-3" className={styles.checkboxContainer}>
+                <label htmlFor="checkbox-3" className={styles.checkboxContainer}>
                     <input type="checkbox" name="" id="checkbox-3" className={styles.checkbox} />
                     <div className={styles.content}>
                         <div>
